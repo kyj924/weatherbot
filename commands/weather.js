@@ -8,7 +8,7 @@ module.exports = {
 
     async run (client, message, args){
 
-    weather.find({search: args.join(" "), degreeType: 'C'}, function (error, result){
+    weather.find({search: args.join(" "), degreeType: 'F'}, function (error, result){
         // 'C' can be changed to 'F' for farneheit results
         if(error) return message.channel.send(error);
         if(!args[0]) return message.channel.send('지역을 입력해주세요')

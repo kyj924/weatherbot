@@ -10,8 +10,7 @@ module.exports = {
 
     async run (client, message, args) {
 
-        const nothing = new Discord.MessageEmbed()
-        .setTitle('No args :(')
+
 
         const corona = await track.countries(args.join(" "));
 
