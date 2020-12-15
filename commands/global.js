@@ -5,7 +5,7 @@ const { NovelCovid } = require('novelcovid');
 const track = new NovelCovid()
 
 module.exports = {
-    name: "코로나 세계",
+    name: "전세계코로나",
     description: "COVID-19 전세계 현황",
 
     async run (client, message, args) {
