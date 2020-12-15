@@ -13,7 +13,7 @@ module.exports = {
         const nothing = new Discord.MessageEmbed()
         .setTitle('No args :(')
 
-        const corona = await track.countries(args.join(" republic of korea "));
+        const corona = await track.countries(args.join("republic of korea"));
 
         if(!args[0]) return message.channel.send(nothing);
 
