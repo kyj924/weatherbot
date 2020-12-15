@@ -5,8 +5,8 @@ const { NovelCovid } = require('novelcovid');
 const track = new NovelCovid()
 
 module.exports = {
-    name: "global",
-    description: "Track a country's COVID-19 cases",
+    name: "코로나",
+    description: "COVID-19 전세계 현황",
 
     async run (client, message, args) {
 
@@ -15,16 +15,16 @@ module.exports = {
 
 
         const embed = new Discord.MessageEmbed()
-        .setTitle(`Worldwide`)
-        .setDescription(`Info on COVID-19`)
-        .addField('Total Confirmed', corona.cases, true)
-        .addField('Total Deaths', corona.deaths, true)
-        .addField('Total Recovered', corona.recovered, true)
-        .addField('Today\'s cases', corona.todayCases, true)
-        .addField('Today\'s deaths', corona.todayDeaths, true)
-        .addField('Active cases', corona.active, true)
-        .addField('Critical cases', corona.critical, true)
-        .setFooter('Thanks for using TestBot111', client.user.displayAvatarURL())
+        .setTitle(`전세계`)
+        .setDescription(`COVID-19 정보`)
+        .addField('확진자', corona.cases, true)
+        .addField('사망자', corona.deaths, true)
+        .addField('격리 해제', corona.recovered, true)
+        .addField('오늘 격리중', corona.todayCases, true)
+        .addField('오늘 사망자', corona.todayDeaths, true)
+        .addField('현재 환자수', corona.active, true)
+        .addField('중상자', corona.critical, true)
+        .setFooter('COVID-19 세계 상황판', client.user.displayAvatarURL())
 
         message.channel.send(embed);
 

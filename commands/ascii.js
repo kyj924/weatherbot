@@ -2,7 +2,7 @@ const figlet = require('figlet');
 
 module.exports = {
     name: "ascii",
-    description: "Converts text to ascii",
+    description: "(영어) 텍스트 이모티콘",
 
     async run (client, message, args){
         if(!args[0]) return message.channel.send('Please provide some text');

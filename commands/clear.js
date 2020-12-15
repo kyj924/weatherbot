@@ -1,5 +1,5 @@
 module.exports = {
-    name: "clear",
+    name: "지우기",
     description: "Clears messages",
 
     async run (client, message, args) {
