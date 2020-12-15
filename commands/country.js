@@ -5,12 +5,13 @@ const { NovelCovid } = require('novelcovid');
 const track = new NovelCovid()
 
 module.exports = {
-    name: "country",
-    description: "Track a country's COVID-19 cases",
+    name: "코로나",
+    description: "나라별 코로나 현황",
 
     async run (client, message, args) {
 
-
+        const nothing = new Discord.MessageEmbed()
+        .setTitle('No args :(')
 
         const corona = await track.countries(args.join(" "));
 
@@ -19,15 +20,15 @@ module.exports = {
 
         const embed = new Discord.MessageEmbed()
         .setTitle(`${corona.country}`)
-        .setDescription(`Info on COVID-19 in ${corona.country}`)
-        .addField('Total Confirmed', corona.cases, true)
-        .addField('Total Deaths', corona.deaths, true)
-        .addField('Total Recovered', corona.recovered, true)
-        .addField('Today\'s cases', corona.todayCases, true)
-        .addField('Today\'s deaths', corona.todayDeaths, true)
-        .addField('Active cases', corona.active, true)
-        .addField('Critical cases', corona.critical, true)
-        .setFooter(`Thanks for using ${client.user.username}`, client.user.displayAvatarURL())
+        .setDescription(`${corona.country} 의 코로나 현황`)
+        .addField('확진자', corona.cases, true)
+        .addField('사망자', corona.deaths, true)
+        .addField('격리 해제', corona.recovered, true)
+        .addField('오늘 격리중', corona.todayCases, true)
+        .addField('오늘 사망자', corona.todayDeaths, true)
+        .addField('현재 환자수', corona.active, true)
+        .addField('중상자', corona.critical, true)
+        .setFooter(`COVID-19 나라별 상황판 ${client.user.username}`, client.user.displayAvatarURL())
 
         message.channel.send(embed);
 

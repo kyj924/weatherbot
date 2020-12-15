@@ -6,17 +6,17 @@ module.exports = {
 
     async run (client, message, args) {
 
-        if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send('You can\'t use that!')
-        if(!message.guild.me.hasPermission("KICK_MEMBERS")) return message.channel.send('I don\'t have the right permissions.')
+        if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send('사용 권한이 없습니다!')
+        if(!message.guild.me.hasPermission("KICK_MEMBERS")) return message.channel.send('봇이 권한을 가지고 있지 않습니다')
 
         const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
 
-        if(!args[0]) return message.channel.send('Please specify a user');
+        if(!args[0]) return message.channel.send('유저를 지정해주세요');
 
-        if(!member) return message.channel.send('Can\'t seem to find this user. Sorry \'bout that :/');
-        if(!member.kickable) return message.channel.send('This user can\'t be kicked. It is either because they are a mod/admin, or their highest role is higher than mine');
+        if(!member) return message.channel.send('해당 유저를 찾을 수 없스1ㅂ니다');
+        if(!member.kickable) return message.channel.send('이 유저는 킥할 수 없습니다');
 
-        if(member.id === message.author.id) return message.channel.send('Bruh, you can\'t kick yourself!');
+        if(member.id === message.author.id) return message.channel.send('스스로 킥 할 수 없습니다');
 
         let reason = args.slice(1).join(" ");
 

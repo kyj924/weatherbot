@@ -1,7 +1,7 @@
 const figlet = require('figlet');
 
 module.exports = {
-    name: "ascii",
+    name: "이모티콘",
     description: "(영어) 텍스트 이모티콘",
 
     async run (client, message, args){
